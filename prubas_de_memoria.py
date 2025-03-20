@@ -1,8 +1,14 @@
+from bestFit import bestFit_algorimth
 archivo = open('memoria.txt', 'r')
 texto_del_archivo = archivo.read()
 print(texto_del_archivo)
 archivo.close()
 
+work_memory = [(0x00A00000, 0x000C0000)]
+work_memory = str(work_memory)
+print(work_memory)
+work_memory = eval(work_memory)
+print(work_memory)
 
 # memoria = eval(texto_del_archivo)
 # print(memoria)
@@ -19,9 +25,29 @@ archivo.close()
 #     print(x)
 
 
-try:
-    x = eval(texto_del_archivo)
-    print(True)
-except SyntaxError as e:
-    print('No se puede transformar el archivo, error: ' + str(e))
+# try:
+#     x = eval(texto_del_archivo)
+#     print(True)
+# except SyntaxError as e:
+#     print('No se puede transformar el archivo, error: ' + str(e))
+# print(x)
+x = eval(texto_del_archivo)
 print(x)
+# x = 14
+# print(x)
+# x = (x + 1)%16
+# print(x)
+# x = (x + 1)%16
+# print(x)
+# x = (x - 1)%16
+# print(x)
+if bestFit_algorimth(texto_del_archivo,65535,0) != None:
+    x,y,z,f = bestFit_algorimth(texto_del_archivo,65535,0)
+    print(x)
+    print(y)
+    print(z)
+    print(f)
+else:
+    valor_none = bestFit_algorimth(texto_del_archivo,65535,0)
+    print(valor_none)
+
