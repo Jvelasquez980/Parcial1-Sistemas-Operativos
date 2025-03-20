@@ -4,11 +4,11 @@ texto_del_archivo = archivo.read()
 print(texto_del_archivo)
 archivo.close()
 
-work_memory = [(0x00A00000, 0x000C0000)]
-work_memory = str(work_memory)
-print(work_memory)
-work_memory = eval(work_memory)
-print(work_memory)
+# work_memory = [(0x00A00000, 0x000C0000)]
+# work_memory = str(work_memory)
+# print(work_memory)
+# work_memory = eval(work_memory)
+# print(work_memory)
 
 # memoria = eval(texto_del_archivo)
 # print(memoria)
@@ -41,6 +41,7 @@ print(x)
 # print(x)
 # x = (x - 1)%16
 # print(x)
+x = int(0x321321)
 if bestFit_algorimth(texto_del_archivo,65535,0) != None:
     x,y,z,f = bestFit_algorimth(texto_del_archivo,65535,0)
     print(x)
