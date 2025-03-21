@@ -55,9 +55,9 @@ w = [
 # x = 0%10
 # print(x)
 print(w)
-x = best_fit(texto_del_archivo,1000,0)
+x = best_fit(w,1000,0)
 print(x)
-x = bestFit_algorithm_salida_hex(texto_del_archivo,1000,0)
+x = bestFit_algorithm_salida_hex(w,1000,0)
 print(x)
 
 
