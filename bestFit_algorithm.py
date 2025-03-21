@@ -106,10 +106,14 @@ def validacion_de_parametros(memory, req : int, index : int  ): # Funcion para v
             return print('El valor del requerimiento no puede ser procesado error: TypeError ' + str(e))
     elif req <= 0:
         return print('El valor requerido no puede ser un numero negativo o 0, no se puede utilizar')
+    contador = 0
     for x in memoria_recibida_formateada:
+        
         if type(x) is not tuple:
             if type(x) is not list:
                 return print('La memoria tiene un formato no valido')
+            else:
+                memoria_recibida_formateada[contador] = tuple(x)
         try:
             if len(x) != 2:
                 return print('La memoria tiene un formato no valido')
@@ -119,6 +123,7 @@ def validacion_de_parametros(memory, req : int, index : int  ): # Funcion para v
         for y in x:
             if type(y) is not int:
                 return print('La memoria tiene un formato no valido, hay valores dentro de la misma que no son numeros')
+        contador +=1
     return memoria_recibida_formateada,cabeza, tamano_de_la_tabla, req
 
 def bestFit_algorithm_salida_hex(memory, req : int, index : int  ): #El indice se manejara como una lista en python que empieza en 0
