@@ -86,8 +86,6 @@ def validacion_de_parametros(memory, req : int, index : int  ): # Funcion para v
     elif len(memoria_recibida_formateada) == 0:
         return print('La tabla de memoria recibida no tiene valores con los cual operar')
          
-    elif type(memoria_recibida_formateada[0]) is not tuple:
-        return print('La tabla de memoria recibida no es una lista de tuplas por lo cual no puede ser utilizada')
     elif type(index) is not int:
         try:
             index = int(index)
@@ -109,6 +107,11 @@ def validacion_de_parametros(memory, req : int, index : int  ): # Funcion para v
     elif req <= 0:
         return print('El valor requerido no puede ser un numero negativo o 0, no se puede utilizar')
     for x in memoria_recibida_formateada:
+        if len(x) != 2:
+            return print('La memoria tiene un formato no valido')
+        elif type(x) is not tuple:
+            if type(x) is not list:
+                return print('La memoria tiene un formato no valido')
         for y in x:
             if type(y) is not int:
                 return print('La memoria tiene un formato no valido, hay valores dentro de la misma que no son numeros')
