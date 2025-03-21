@@ -5,13 +5,6 @@ print(texto_del_archivo)
 archivo.close()
 w = [
     (0, 2047),     # 2048 bytes
-    (123, 8191),  # 4096 bytes
-    [213,213], # 1024 bytes
-    [123123, 1312], # 8192 bytes
-    (28672, 30719), # 2048 bytes
-    (36864, 45055), # 8192 bytes
-    (53248, 57343), # 4096 bytes
-    (61440, 1000)  # 4096 bytes
 ]
 
 # work_memory = [(0x00A00000, 0x000C0000)]
@@ -55,7 +48,7 @@ w = [
 # x = 0%10
 # print(x)
 print(w)
-x = best_fit(w,1000,0)
+x = best_fit(w,2047,0)
 print(x)
 x = bestFit_algorithm_salida_hex(w,1000,0)
 print(x)

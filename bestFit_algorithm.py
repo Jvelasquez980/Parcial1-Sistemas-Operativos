@@ -44,7 +44,10 @@ def best_fit(memory, req : int, index : int  ): #ESTA ES LA FUNCION PARA EL PARC
         tamano_de_la_tabla = tamano_de_la_tabla - 1
         creacion_nueva_memoria_txt(nueva_memoria)
         if cabeza_con_mejor_rendimiento == tamano_de_la_tabla:
-            cabeza_con_mejor_rendimiento = (cabeza_con_mejor_rendimiento)%(tamano_de_la_tabla)
+            if tamano_de_la_tabla == 0:
+                cabeza_con_mejor_rendimiento = None
+            else:
+                cabeza_con_mejor_rendimiento = (cabeza_con_mejor_rendimiento)%(tamano_de_la_tabla)
             return nueva_memoria, mejor_base, req, cabeza_con_mejor_rendimiento
         return nueva_memoria, mejor_base, req, cabeza_con_mejor_rendimiento
         
