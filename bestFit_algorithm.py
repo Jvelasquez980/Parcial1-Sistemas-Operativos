@@ -123,7 +123,7 @@ def validacion_de_parametros(memory, req : int, index : int  ): # Funcion para v
         for y in x:
             if type(y) is not int:
                 return print('La memoria tiene un formato no valido, hay valores dentro de la misma que no son numeros')
-            elif y <= 0:
+            elif y < 0:
                 return print('La memoria tiene un formato no valido, hay valores negativos o 0')
         contador +=1
     return memoria_recibida_formateada,cabeza, tamano_de_la_tabla, req
